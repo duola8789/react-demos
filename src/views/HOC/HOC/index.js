@@ -5,14 +5,14 @@ import React, { Component } from 'react';
 import { get } from '../../../network/helpers';
 
 // 为组件添加获取数据和点击刷新的功能
-const loadAndRefreshHOC = url => WrappedComponent => {
+const loadAndRefreshHOC = (url) => (WrappedComponent) => {
   return class extends Component {
     constructor(props) {
       super(props);
       this.state = {
         contents: '',
         src: '',
-        loading: false,
+        loading: false
       };
     }
 
@@ -42,18 +42,19 @@ const loadAndRefreshHOC = url => WrappedComponent => {
         return <div>Loading!!!!!!!</div>;
       }
       return (
-        <WrappedComponent contents={this.state.contents}
-                          src={this.state.src}
-                          refresh={() => this.refresh()}
-                          {...this.props}>
-        </WrappedComponent>
+        <WrappedComponent
+          contents={this.state.contents}
+          src={this.state.src}
+          refresh={() => this.refresh()}
+          {...this.props}
+        ></WrappedComponent>
       );
     }
   };
 };
 
 // 用来监控父级组件传入的Props的改变
-const logPropsHOC = WrappedComponent => {
+const logPropsHOC = (WrappedComponent) => {
   return class extends Component {
     UNSAFE_componentWillReceiveProps(nextProps, nextContext) {
       console.log(`WrappedComponent: ${WrappedComponent.displayName}, Current props: `, this.props);
@@ -62,15 +63,13 @@ const logPropsHOC = WrappedComponent => {
     }
 
     render() {
-      return (
-        <WrappedComponent {...this.props} />
-      );
+      return <WrappedComponent {...this.props} />;
     }
   };
 };
 
 // 获取鼠标位置
-const showMousePosHoc = WrappedComponent => {
+const showMousePosHoc = (WrappedComponent) => {
   return class extends Component {
     state = {
       x: 0,
@@ -94,8 +93,4 @@ const showMousePosHoc = WrappedComponent => {
   };
 };
 
-export {
-  loadAndRefreshHOC,
-  logPropsHOC,
-  showMousePosHoc,
-};
+export { loadAndRefreshHOC, logPropsHOC, showMousePosHoc };

@@ -14,6 +14,8 @@ const containerStyle = {
 
 export default function NotFound() {
   return (
-    <div style={containerStyle}><img src={notFoundImg} alt="404" style={{ maxWidth: '600px' }} /></div>
+    <div style={containerStyle}>
+      <img src={notFoundImg} alt="404" style={{ maxWidth: '600px' }} />
+    </div>
   );
 }

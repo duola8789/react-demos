@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import defaultImage from '@/assets/images/default.jpg';
 import { Spin } from 'antd';
 
-export default function ({ image, fetching }) {
+export default function({ image, fetching }) {
   const [loading, setLoading] = useState(false);
   const src = image ? image : defaultImage;
 

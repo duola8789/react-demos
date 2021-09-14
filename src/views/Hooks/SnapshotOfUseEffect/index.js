@@ -3,7 +3,7 @@
  */
 import React, { useState } from 'react';
 
-export default function () {
+export default function() {
   const [count, setCount] = useState(1);
 
   const log = () => {
@@ -15,10 +15,12 @@ export default function () {
   return (
     <div>
       <p>{count}</p>
-      <button onClick={() => {
-        log();
-        setCount(100);
-      }}>
+      <button
+        onClick={() => {
+          log();
+          setCount(100);
+        }}
+      >
         Set future count
       </button>
     </div>

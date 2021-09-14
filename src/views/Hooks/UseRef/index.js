@@ -3,7 +3,7 @@
  */
 import React, { useEffect, useRef } from 'react';
 
-export default function () {
+export default function() {
   const count = useRef(1);
 
   // useEffect1

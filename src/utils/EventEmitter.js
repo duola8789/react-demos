@@ -17,7 +17,7 @@ export class EventEmitter {
     if (!this.events[name]) {
       return;
     }
-    this.events[name].forEach(cb => cb(...params));
+    this.events[name].forEach((cb) => cb(...params));
   }
 
   off(name) {

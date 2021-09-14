@@ -3,6 +3,4 @@
  */
 import useUrlToMenu from './useUrlToMenu';
 
-export {
-  useUrlToMenu,
-};
+export { useUrlToMenu };

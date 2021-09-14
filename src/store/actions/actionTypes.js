@@ -7,6 +7,6 @@ export default {
     DELETE_ITEM: Symbol('deleteItem'),
     CHANGE_ITEM: Symbol('changeItem'),
     UPDATE_LIST: Symbol('updateList'),
-    CHANGE_LOADING: Symbol('changeLoading'),
+    CHANGE_LOADING: Symbol('changeLoading')
   }
 };

@@ -28,8 +28,6 @@ export default class Index extends Component {
   }
 
   render() {
-    return (
-      <NewPost />
-    );
+    return <NewPost />;
   }
 }

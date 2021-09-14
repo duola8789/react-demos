@@ -24,8 +24,7 @@ const reducer1 = (state = 0, action) => {
   }
 };
 
-
-const reducer3 = function (state = { status: '', answer: { msg: '', image: defaultImage }}, action) {
+const reducer3 = function(state = { status: '', answer: { msg: '', image: defaultImage } }, action) {
   // console.log('reducer_3 was called with state', state, 'and action', action);
   switch (action.type) {
     case 'SAY_SOMETHING': {
@@ -38,14 +37,14 @@ const reducer3 = function (state = { status: '', answer: { msg: '', image: defau
       return {
         ...state,
         status: action.status,
-        question: action.question,
+        question: action.question
       };
     }
     case 'RECEIVE_ANSWER': {
       return {
         ...state,
         status: action.payload ? action.payload.status : action.status,
-        answer: action.payload ? action.payload.answer : action.answer,
+        answer: action.payload ? action.payload.answer : action.answer
       };
     }
     default:
@@ -75,7 +74,7 @@ const reducer14 = (state = { msg: 'Hello' }, action) => {
   switch (action.type) {
     case 'changeMsg': {
       return {
-        msg: 'By Redux From ' + action.payload.where,
+        msg: 'By Redux From ' + action.payload.where
       };
     }
     default: {
@@ -91,7 +90,7 @@ const sagaAnswer = (state = { question: '', answer: '', image: '', loading: fals
         question: action.payload.question,
         answer: '',
         image: '',
-        loading: false,
+        loading: false
       };
     }
     case 'ASK_QUESTION_SUCCEEDED': {
@@ -99,7 +98,7 @@ const sagaAnswer = (state = { question: '', answer: '', image: '', loading: fals
         ...state,
         answer: action.payload.answer,
         image: action.payload.image,
-        loading: false,
+        loading: false
       };
     }
     case 'ASK_QUESTION_FAILED': {
@@ -107,7 +106,7 @@ const sagaAnswer = (state = { question: '', answer: '', image: '', loading: fals
         ...state,
         answer: action.payload.message,
         image: '',
-        loading: false,
+        loading: false
       };
     }
     case 'THINKING': {
@@ -115,7 +114,7 @@ const sagaAnswer = (state = { question: '', answer: '', image: '', loading: fals
         ...state,
         answer: 'Thinking...',
         image: '',
-        loading: true,
+        loading: true
       };
     }
     default: {
@@ -129,19 +128,19 @@ const sagaCount = (state = { count: 0, loading: false }, action) => {
     case 'INCREMENT': {
       return {
         count: state.count + 1,
-        loading: false,
+        loading: false
       };
     }
     case 'DECREMENT': {
       return {
         count: state.count - 1,
-        loading: false,
+        loading: false
       };
     }
     case 'ASYNC_LOADING': {
       return {
         ...state,
-        loading: true,
+        loading: true
       };
     }
     default: {
@@ -157,13 +156,13 @@ const sagaTodo = (state = { list: [], loading: false }, action) => {
       return {
         loading: false,
         list: action.payload.list,
-        count: action.payload.count,
+        count: action.payload.count
       };
     }
     case actionType.CHANGE_LOADING: {
       return {
         ...state,
-        loading: action.payload.loading,
+        loading: action.payload.loading
       };
     }
     default: {
@@ -179,7 +178,7 @@ const reducer = combineReducers({
   reducer14,
   sagaAnswer,
   sagaCount,
-  sagaTodo,
+  sagaTodo
 });
 
 export default reducer;
@@ -227,5 +226,3 @@ export default reducer;
   }, {})
 }
  */
-
-

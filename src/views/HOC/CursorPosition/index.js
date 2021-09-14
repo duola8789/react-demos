@@ -8,7 +8,9 @@ const Base = ({ pos }) => {
   const { x, y } = pos;
   return (
     <div>
-      <h1>The position of mouse is ({x}, {y})</h1>
+      <h1>
+        The position of mouse is ({x}, {y})
+      </h1>
     </div>
   );
 };
@@ -28,8 +30,6 @@ const AppWithMouse = showMousePosHoc(Base);
 
 export default class index extends Component {
   render() {
-    return (
-      <AppWithMouse />
-    );
+    return <AppWithMouse />;
   }
 }

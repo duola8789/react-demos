@@ -37,20 +37,23 @@ const fullRoutes = [
       {
         name: 'React 16',
         path: '/uncategorized/react16',
-        component: React16,
-      }, {
+        component: React16
+      },
+      {
         name: '组件间通信',
         path: '/uncategorized/communication',
-        component: Communication,
-      }, {
+        component: Communication
+      },
+      {
         name: 'Render Props',
         path: '/uncategorized/render-props',
-        component: RenderProps,
-      }, {
+        component: RenderProps
+      },
+      {
         name: 'Context API',
         path: '/uncategorized/context-api',
-        component: ContextApi,
-      },
+        component: ContextApi
+      }
     ]
   },
   {
@@ -61,20 +64,23 @@ const fullRoutes = [
       {
         name: '基本概念',
         path: '/redux/concepts',
-        component: Concepts,
-      }, {
+        component: Concepts
+      },
+      {
         name: '中间件和异步操作',
         path: '/redux/middleware',
-        component: Middleware,
-      }, {
+        component: Middleware
+      },
+      {
         name: 'React-Redux',
         path: '/redux/react-redux',
-        component: ReactRedux,
-      }, {
+        component: ReactRedux
+      },
+      {
         name: 'Redux-Saga',
         path: '/redux/count-demo-saga',
-        component: CountDemoBySaga,
-      },
+        component: CountDemoBySaga
+      }
     ]
   },
   {
@@ -85,12 +91,13 @@ const fullRoutes = [
       {
         name: '获取数据和刷新',
         path: '/hoc/fetch-and-refresh',
-        component: FetchAndRefresh,
-      }, {
+        component: FetchAndRefresh
+      },
+      {
         name: '显示鼠标位置',
         path: '/hoc/cursor-position',
-        component: CursorPosition,
-      },
+        component: CursorPosition
+      }
     ]
   },
   {
@@ -101,32 +108,38 @@ const fullRoutes = [
       {
         name: '计数器',
         path: '/hooks/count-demo',
-        component: CountDemo,
-      }, {
+        component: CountDemo
+      },
+      {
         name: 'useEffect',
         path: '/hooks/use-effect',
-        component: UseEffect,
-      }, {
+        component: UseEffect
+      },
+      {
         name: 'useEffect快照',
         path: '/hooks/snapshot-use-effect',
-        component: SnapshotOfUseEffect,
-      }, {
+        component: SnapshotOfUseEffect
+      },
+      {
         name: 'useRef',
         path: '/hooks/use-ref',
-        component: UseRef,
-      }, {
+        component: UseRef
+      },
+      {
         name: 'useReducer',
         path: '/hooks/use-reducer',
-        component: UseReducer,
-      }, {
+        component: UseReducer
+      },
+      {
         name: 'useCallback',
         path: '/hooks/use-callback',
-        component: UseCallback,
-      }, {
+        component: UseCallback
+      },
+      {
         name: 'useContext',
         path: '/hooks/use-context',
-        component: UseContext,
-      },
+        component: UseContext
+      }
     ]
   },
   {
@@ -137,7 +150,7 @@ const fullRoutes = [
       {
         name: '基本概念',
         path: '/Dva/concepts',
-        component: Dva,
+        component: Dva
       }
     ]
   },
@@ -145,38 +158,35 @@ const fullRoutes = [
     name: 'HOME',
     path: '/',
     component: Index,
-    hiddenInSider: true,
+    hiddenInSider: true
   },
   {
     name: 'NotFound',
     path: '*',
     component: NotFound,
-    hiddenInSider: true,
+    hiddenInSider: true
   }
 ];
 
 // 用于侧边栏
-const menus = fullRoutes.filter(route => !route.hiddenInSider);
+const menus = fullRoutes.filter((route) => !route.hiddenInSider);
 
 // 用于注册路由
 const routes = fullRoutes.reduce((total, current) => {
   let route = [];
   if (current.children) {
-    route = current.children.map(child => ({
+    route = current.children.map((child) => ({
       path: child.path,
-      component: child.component,
+      component: child.component
     }));
   }
   if (current.path && current.component) {
     route.push({
       path: current.path,
-      component: current.component,
+      component: current.component
     });
   }
   return total.concat(route);
 }, []);
 
-export {
-  menus,
-  routes
-};
+export { menus, routes };

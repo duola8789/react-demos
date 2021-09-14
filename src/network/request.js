@@ -9,4 +9,3 @@ const getAnswer = async (params) => get(API.yesOrNoApi, params);
 export default {
   getAnswer
 };
-

@@ -25,6 +25,6 @@ export default function configureStore() {
   return {
     // 创建 Store，并注入中间件
     ...createStore(rootReducer, applyMiddleware(logMiddleware, sagaMiddleware)),
-    runSaga: sagaMiddleware.run,
+    runSaga: sagaMiddleware.run
   };
 }

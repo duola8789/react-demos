@@ -11,9 +11,9 @@ export function* fetchAnswerAsync(action) {
   try {
     yield put({ type: 'THINKING' });
     const { answer, image } = yield call(Request.getAnswer, { question: action.payload.question });
-    yield put({ type: 'ASK_QUESTION_SUCCEEDED', payload: { answer, image }});
+    yield put({ type: 'ASK_QUESTION_SUCCEEDED', payload: { answer, image } });
   } catch (e) {
-    yield put({ type: 'ASK_QUESTION_FAILED', payload: { message: e.message }});
+    yield put({ type: 'ASK_QUESTION_FAILED', payload: { message: e.message } });
   }
 }
 
@@ -46,11 +46,5 @@ export function* watchIncrementAsync() {
 }
 
 export default function* root() {
-  yield all([
-    helloSaga(),
-    watchIncrementAsync(),
-    watchFetchAnswer(),
-    todoFlows(),
-  ]);
+  yield all([helloSaga(), watchIncrementAsync(), watchFetchAnswer(), todoFlows()]);
 }
-

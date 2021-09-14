@@ -16,7 +16,7 @@ describe('incrementAsync Saga test ', () => {
 
 describe('fetchAnswerAsync Saga test ', () => {
   it('fetch succeed', () => {
-    const gen = fetchAnswerAsync({ payload: { question: 'hello' }});
+    const gen = fetchAnswerAsync({ payload: { question: 'hello' } });
     expect(gen.next()).toEqual({ done: false, value: put({ type: 'THINKING' }) });
     expect(gen.next()).toEqual({ done: false, value: call(Request.getAnswer, { question: 'hello' }) });
     // mock success response
@@ -25,14 +25,14 @@ describe('fetchAnswerAsync Saga test ', () => {
       done: false,
       value: put({
         type: 'ASK_QUESTION_SUCCEEDED',
-        payload: res,
+        payload: res
       })
     });
     expect(gen.next()).toEqual({ done: true });
   });
 
   it('fetch fail', () => {
-    const gen = fetchAnswerAsync({ payload: { question: 'hello' }});
+    const gen = fetchAnswerAsync({ payload: { question: 'hello' } });
     expect(gen.next()).toEqual({ done: false, value: put({ type: 'THINKING' }) });
     expect(gen.next()).toEqual({ done: false, value: call(Request.getAnswer, { question: 'hello' }) });
     // mock error response
@@ -41,7 +41,7 @@ describe('fetchAnswerAsync Saga test ', () => {
       done: false,
       value: put({
         type: 'ASK_QUESTION_FAILED',
-        payload: error,
+        payload: error
       })
     });
     expect(gen.next()).toEqual({ done: true });

@@ -3,7 +3,7 @@
  */
 import React, { useState, useEffect } from 'react';
 
-export default function () {
+export default function() {
   const [count1, setCount1] = useState(0);
   const [count2, setCount2] = useState(0);
 

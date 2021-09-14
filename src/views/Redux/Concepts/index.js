@@ -39,15 +39,17 @@ export default class Index extends Component {
     });
 
     return (
-      <Count value={value}
-             onIncrement={() => store.dispatch({ type: ACTIONS.INCREMENT })}
-             onDecrement={() => store.dispatch({ type: ACTIONS.DECREMENT })}
-             onChange={(e) => store.dispatch({
-               type: ACTIONS.CHANGE,
-               payload: e.target.value
-             })}>
-      </Count>
+      <Count
+        value={value}
+        onIncrement={() => store.dispatch({ type: ACTIONS.INCREMENT })}
+        onDecrement={() => store.dispatch({ type: ACTIONS.DECREMENT })}
+        onChange={(e) =>
+          store.dispatch({
+            type: ACTIONS.CHANGE,
+            payload: e.target.value
+          })
+        }
+      ></Count>
     );
   }
 }
-

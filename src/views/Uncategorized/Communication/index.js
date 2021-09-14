@@ -10,7 +10,7 @@ import { event3 as event } from '@/utils';
 // 初始化一个 Context
 const Context = React.createContext();
 
-const Child1 = props => {
+const Child1 = (props) => {
   useEffect(() => {
     let timer = setTimeout(() => {
       event.emit('msg', 'Message from Child1');
@@ -29,7 +29,7 @@ const Child1 = props => {
   );
 };
 
-const Grandson1 = props => {
+const Grandson1 = (props) => {
   return (
     <div className={style['grandson-container']}>
       <h5 onClick={() => props.changeMsg('By Grandson1')}>Grandson1 -- {props.msg}</h5>
@@ -38,7 +38,7 @@ const Grandson1 = props => {
 };
 
 const mapStateToProps = (state) => ({ rootMsg: state.reducer14.msg });
-const mapDispatchToProps = { changeMsg: where => ({ type: 'changeMsg', payload: { where }}) };
+const mapDispatchToProps = { changeMsg: (where) => ({ type: 'changeMsg', payload: { where } }) };
 
 const Grandson2 = ({ rootMsg, changeMsg }) => {
   return (
@@ -54,7 +54,7 @@ const Child2 = () => {
   const [msg, setMsg] = useState('Child2');
 
   useEffect(() => {
-    event.on('msg', newMsg => setMsg(newMsg));
+    event.on('msg', (newMsg) => setMsg(newMsg));
     return () => {
       event.off('msg');
     };
@@ -71,7 +71,7 @@ const Child2 = () => {
 const Grandson3 = () => {
   return (
     <Context.Consumer>
-      {context => (
+      {(context) => (
         <div className={style['grandson-container']}>
           <h5 onClick={() => context.changeMsg('By Grandson3')}>Grandson3 -- {context.msgToGrand3}</h5>
         </div>
@@ -91,7 +91,6 @@ const Child3 = () => {
   );
 };
 
-
 const Parent = () => {
   const [msg, setMsg] = useState('start');
 
@@ -106,13 +105,15 @@ const Parent = () => {
   }, []);
 
   return (
-    <Context.Provider value={{
-      msgToGrand3: msg,
-      changeMsg: setMsg
-    }}>
+    <Context.Provider
+      value={{
+        msgToGrand3: msg,
+        changeMsg: setMsg
+      }}
+    >
       <div className={style['parent-container']}>
         <h3>Parent -- {msg}</h3>
-        <Child1 msg={msg} changeMsg={newMsg => setMsg(newMsg)} />
+        <Child1 msg={msg} changeMsg={(newMsg) => setMsg(newMsg)} />
         <Child2 />
         <Child3 />
       </div>
@@ -131,7 +132,7 @@ const Demo14 = ({ rootMsg, changeMsg }) => {
 
 const Demo14Container = connect(mapStateToProps, mapDispatchToProps)(Demo14);
 
-export default function () {
+export default function() {
   return (
     <Provider store={store}>
       <Demo14Container />

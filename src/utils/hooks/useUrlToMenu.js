@@ -5,7 +5,7 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-export default function () {
+export default function() {
   const { pathname } = useLocation();
   const [menuObject, setMenuObject] = useState([]);
 

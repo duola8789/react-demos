@@ -14,11 +14,11 @@ export default function(props) {
   const location = useLocation();
 
   // 面包屑
-  const subMenuTitle = (location.state && location.state.subMenuName) ? location.state.subMenuName : DEFAULT_TITLE;
-  const itemTitle = (location.state && location.state.itemName) ? location.state.itemName : '';
+  const subMenuTitle = location.state && location.state.subMenuName ? location.state.subMenuName : DEFAULT_TITLE;
+  const itemTitle = location.state && location.state.itemName ? location.state.itemName : '';
 
   // 点击 Logo 回到首页
-  const go = path => {
+  const go = (path) => {
     history.push(path, { itemName: '', subMenuName: '' });
   };
 
@@ -30,15 +30,16 @@ export default function(props) {
       </Sider>
       <Layout>
         <Header className={styles.header}>
-          <Icon className={styles.trigger}
-                type={isCollapsed ? 'menu-unfold' : 'menu-fold'}
-                onClick={() => setIsCollapsed(!isCollapsed)}>
-          </Icon>
+          <Icon
+            className={styles.trigger}
+            type={isCollapsed ? 'menu-unfold' : 'menu-fold'}
+            onClick={() => setIsCollapsed(!isCollapsed)}
+          ></Icon>
           <Breadcrumb className={styles.breadcrumb}>
             <Breadcrumb.Item>{subMenuTitle}</Breadcrumb.Item>
             <Breadcrumb.Item>{itemTitle}</Breadcrumb.Item>
           </Breadcrumb>
-        </Header >
+        </Header>
         <Content className={styles.content}>{props.children}</Content>
       </Layout>
     </Layout>

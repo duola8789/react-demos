@@ -20,6 +20,8 @@
     "dotenv-expand": "4.2.0",
     "eslint": "5.6.0",
     "eslint-config-alloy": "^1.4.2",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-prettier-react": "^0.0.24",
     "eslint-config-react-app": "^3.0.6",
     "eslint-loader": "2.1.1",
     "eslint-plugin-flowtype": "2.50.1",
@@ -68,8 +70,8 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js  --watchAll=false --colors --expand --verbose --onlyChanged",
     "test-all": "node scripts/test.js  --watchAll=false --colors --expand --verbose",
-    "test-watch": "node scripts/test.js"
-
+    "test-watch": "node scripts/test.js",
+    "format": "prettier --write 'src/**/*.{jsx,tsx,ts,js}'"
   },
   "eslintConfig": {
     "extends": "react-app"

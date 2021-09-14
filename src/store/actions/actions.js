@@ -8,7 +8,7 @@ const sagaTodo = {
     return {
       type: actionTypes.sagaTodo.ADD_ITEM,
       payload: {
-        content,
+        content
       }
     };
   },
@@ -16,18 +16,18 @@ const sagaTodo = {
     return {
       type: actionTypes.sagaTodo.DELETE_ITEM,
       payload: {
-        id,
+        id
       }
     };
   },
   changeItem(item) {
     return {
       type: actionTypes.sagaTodo.CHANGE_ITEM,
-      payload: item,
+      payload: item
     };
-  },
+  }
 };
 
 export default {
-  sagaTodo,
+  sagaTodo
 };

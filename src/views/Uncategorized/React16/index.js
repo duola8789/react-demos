@@ -19,7 +19,7 @@ class Test extends React.Component {
 
   componentDidCatch(error, errorInfo) {
     this.setState({
-      y: 81,
+      y: 81
     });
     console.log(this.state.y, 123);
   }
@@ -28,20 +28,18 @@ class Test extends React.Component {
     if (this.state.y === 999) {
       throw new Error('33333');
     }
-    return (
-      <h1>{this.state.y}</h1>
-    );
+    return <h1>{this.state.y}</h1>;
   }
 }
 
 export default class Index extends React.Component {
   state = {
-    x: 1223,
+    x: 1223
   };
 
   test = () => {
     this.setState({
-      x: 999,
+      x: 999
     });
   };
 

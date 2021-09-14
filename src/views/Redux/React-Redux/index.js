@@ -24,7 +24,7 @@ const mapStateToProps = (state) => ({ value: state.val4.count });
 // 对象形式
 const mapDispatchToProps = {
   onIncreaseClick: () => ({ type: 'INCREMENT' }),
-  onDecreaseClick: () => ({ type: 'DECREMENT' }),
+  onDecreaseClick: () => ({ type: 'DECREMENT' })
 };
 
 const CountContainer = connect(mapStateToProps, mapDispatchToProps)(Count);
@@ -38,5 +38,3 @@ export default class Index extends Component {
     );
   }
 }
-
-

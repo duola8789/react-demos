@@ -23,7 +23,7 @@ function reducer(state, action) {
   }
 }
 
-export default function () {
+export default function() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (

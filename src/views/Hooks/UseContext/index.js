@@ -34,12 +34,10 @@ const Provider = ({ children }) => {
 const Child = () => {
   const { msg, setMsg } = useContext(MyContext);
 
-  return (
-    <button onClick={() => setMsg('Hello Parent')}>Child -- {msg}</button>
-  );
+  return <button onClick={() => setMsg('Hello Parent')}>Child -- {msg}</button>;
 };
 
-export default function () {
+export default function() {
   return (
     <Provider>
       <Child />

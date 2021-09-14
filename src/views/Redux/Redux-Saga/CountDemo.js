@@ -13,11 +13,13 @@ const Counter = ({ value, onIncrement, onDecrement, onIncrementAsync, loading })
   return (
     <div>
       <h1>Clicked: {value} times</h1>
-      <Button onClick={onIncrement} className={style.countButton}>Increment</Button>
-      <Button onClick={onDecrement} className={style.countButton}>Decrement</Button>
-      <Button onClick={onIncrementAsync}
-              className={style.countButton}
-              loading={loading}>
+      <Button onClick={onIncrement} className={style.countButton}>
+        Increment
+      </Button>
+      <Button onClick={onDecrement} className={style.countButton}>
+        Decrement
+      </Button>
+      <Button onClick={onIncrementAsync} className={style.countButton} loading={loading}>
         Increment after 1 second
       </Button>
     </div>
@@ -43,11 +45,12 @@ const FetchAnswer = () => {
 
   return (
     <Fragment>
-      <Input.Search placeholder="Your question is ..."
-                    onChange={e => store.dispatch({ type: 'ASK', payload: { question: e.target.value }})}
-                    onSearch={value => store.dispatch({ type: 'FETCH_ANSWER_REQUESTED', payload: { question: value }})}
-                    style={{ width: 200 }}>
-      </Input.Search>
+      <Input.Search
+        placeholder="Your question is ..."
+        onChange={(e) => store.dispatch({ type: 'ASK', payload: { question: e.target.value } })}
+        onSearch={(value) => store.dispatch({ type: 'FETCH_ANSWER_REQUESTED', payload: { question: value } })}
+        style={{ width: 200 }}
+      ></Input.Search>
       <p className={style.question}>Your question is: {question}</p>
       <p>The answer is: {answer}</p>
       <div className={style.imageContainer}>
@@ -72,12 +75,13 @@ export default function ReduxSaga() {
 
   return (
     <div>
-      <Counter value={count}
-               loading={loading}
-               onIncrement={() => store.dispatch({ type: 'INCREMENT' })}
-               onDecrement={() => store.dispatch({ type: 'DECREMENT' })}
-               onIncrementAsync={() => store.dispatch({ type: 'INCREMENT_ASYNC' })}>
-      </Counter>
+      <Counter
+        value={count}
+        loading={loading}
+        onIncrement={() => store.dispatch({ type: 'INCREMENT' })}
+        onDecrement={() => store.dispatch({ type: 'DECREMENT' })}
+        onIncrementAsync={() => store.dispatch({ type: 'INCREMENT_ASYNC' })}
+      ></Counter>
       <div className={style.demoContainer}>
         <FetchAnswer fetchAnswer={() => store.dispatch({ type: 'ASK_QUESTION_REQUESTED' })} />
       </div>
@@ -87,5 +91,3 @@ export default function ReduxSaga() {
     </div>
   );
 }
-
-

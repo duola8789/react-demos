@@ -18,7 +18,7 @@ class ShowMousePos extends Component {
 
   render() {
     return (
-      <div onMouseMove={(e) => this.handleMouseMove(e)} style={{ 'height': '60vh', 'border': '1px solid grey' }}>
+      <div onMouseMove={(e) => this.handleMouseMove(e)} style={{ height: '60vh', border: '1px solid grey' }}>
         {this.props.render(this.state)}
       </div>
     );
@@ -27,17 +27,18 @@ class ShowMousePos extends Component {
 
 const AppWithMouse = () => (
   <div>
-    <ShowMousePos render={({ x, y }) => (
-      <h1>The position of mouse is ({x}, {y})</h1>
-    )}>
-    </ShowMousePos>
+    <ShowMousePos
+      render={({ x, y }) => (
+        <h1>
+          The position of mouse is ({x}, {y})
+        </h1>
+      )}
+    ></ShowMousePos>
   </div>
 );
 
 export default class Demo5 extends Component {
   render() {
-    return (
-      <AppWithMouse />
-    );
+    return <AppWithMouse />;
   }
 }

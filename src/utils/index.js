@@ -7,10 +7,6 @@ const EventEmitter3 = require('eventemitter3');
 const event = new EventEmitter();
 const event3 = new EventEmitter3();
 
-const delay = async ms => new Promise(resolve => setTimeout(resolve, ms));
+const delay = async (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-export {
-  event,
-  event3,
-  delay,
-};
+export { event, event3, delay };

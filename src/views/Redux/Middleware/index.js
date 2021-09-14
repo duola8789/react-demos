@@ -95,12 +95,10 @@ export default class Index extends Component {
     store.dispatch(
       createAction('RECEIVE_ANSWER')(
         // Promise的then函数返回值才是createAction的第二个参数
-        Request.getAnswer({ question }).then(v => (
-          {
-            status: '',
-            answer: v
-          })
-        )
+        Request.getAnswer({ question }).then((v) => ({
+          status: '',
+          answer: v
+        }))
       )
     );
   }
@@ -115,15 +113,18 @@ export default class Index extends Component {
         this.setState({
           status: store.getState().val3.status,
           answer: store.getState().val3.answer,
-          question: store.getState().val3.question,
+          question: store.getState().val3.question
         });
       }
     });
 
     return (
       <div>
-        <input placeholder="input your question..." value={this.state.questionInput}
-               onChange={(e) => this.setState({ questionInput: e.target.value })} />
+        <input
+          placeholder="input your question..."
+          value={this.state.questionInput}
+          onChange={(e) => this.setState({ questionInput: e.target.value })}
+        />
         <button onClick={() => this.sendQuestion()}>send</button>
         {status}
         <p>The question is {question}</p>
@@ -135,5 +136,3 @@ export default class Index extends Component {
     );
   }
 }
-
-

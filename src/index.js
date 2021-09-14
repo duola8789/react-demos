@@ -13,9 +13,9 @@ function RouterContainer() {
     <Router>
       <Layout>
         <Switch>
-          {routes.map(route =>
-            <Route path={route.path} component={route.component} key={route.path} exact />)
-          }
+          {routes.map((route) => (
+            <Route path={route.path} component={route.component} key={route.path} exact />
+          ))}
         </Switch>
       </Layout>
     </Router>

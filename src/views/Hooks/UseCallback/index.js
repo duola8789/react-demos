@@ -26,7 +26,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 // }
 
 // 使用 useCallback + useMemo
-export default function () {
+export default function() {
   const [count1, setCount1] = useState(0);
   const [count2, setCount2] = useState(100);
 
@@ -49,4 +49,3 @@ export default function () {
     </div>
   );
 }
-
