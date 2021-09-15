@@ -33,7 +33,7 @@ const TodoItem = ({ item, deleteTodoItem, changeTodoItem }) => {
           checked={item.done}
           className={style.checkbox}
           onChange={() => changeTodoItem({ ...item, done: !item.done })}
-        ></Checkbox>
+        />
       </div>
       <Input
         value={item.content}

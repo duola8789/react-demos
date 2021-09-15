@@ -1,0 +1,17 @@
+/**
+ * Created by zh on 2019/3/6.
+ */
+.todoList {
+  margin-top: 20px
+}
+
+.todoItem {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 12px
+}
+
+.todoItem * {
+  margin-right: 12px;
+}

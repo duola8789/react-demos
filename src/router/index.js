@@ -25,6 +25,8 @@ import UseReducer from '@/views/Hooks/UseReducer';
 import UseCallback from '@/views/Hooks/UseCallback';
 import UseContext from '@/views/Hooks/UseContext';
 
+import DexieTodoList from '@/views/Uncategorized/DexieTodoList';
+
 import Dva from '@/views/Dva';
 
 // 路由列表，一级目录的 path 用作 key
@@ -53,6 +55,11 @@ const fullRoutes = [
         name: 'Context API',
         path: '/uncategorized/context-api',
         component: ContextApi
+      },
+      {
+        name: 'Dexie Todo List',
+        path: '/uncategorized/dexie-todo-list',
+        component: DexieTodoList
       }
     ]
   },

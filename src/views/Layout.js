@@ -34,7 +34,7 @@ export default function(props) {
             className={styles.trigger}
             type={isCollapsed ? 'menu-unfold' : 'menu-fold'}
             onClick={() => setIsCollapsed(!isCollapsed)}
-          ></Icon>
+          />
           <Breadcrumb className={styles.breadcrumb}>
             <Breadcrumb.Item>{subMenuTitle}</Breadcrumb.Item>
             <Breadcrumb.Item>{itemTitle}</Breadcrumb.Item>
