@@ -16,7 +16,7 @@
     "case-sensitive-paths-webpack-plugin": "2.1.2",
     "chalk": "2.4.1",
     "css-loader": "1.0.0",
-    "dexie": "^2.0.4",
+    "dexie": "^3.2.2",
     "dexie-react-hooks": "^1.0.7",
     "dotenv": "6.0.0",
     "dotenv-expand": "4.2.0",
