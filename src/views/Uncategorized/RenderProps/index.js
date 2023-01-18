@@ -33,7 +33,7 @@ const AppWithMouse = () => (
           The position of mouse is ({x}, {y})
         </h1>
       )}
-    ></ShowMousePos>
+    />
   </div>
 );
 

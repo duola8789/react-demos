@@ -8,6 +8,7 @@ import React16 from '@/views/Uncategorized/React16';
 import Communication from '@/views/Uncategorized/Communication';
 import RenderProps from '@/views/Uncategorized/RenderProps';
 import ContextApi from '@/views/Uncategorized/ContextApi';
+import SuspenseComp from '@/views/Uncategorized/Suspense';
 
 import Concepts from '@/views/Redux/Concepts';
 import Middleware from '@/views/Redux/Middleware';
@@ -60,6 +61,11 @@ const fullRoutes = [
         name: 'Dexie Todo List',
         path: '/uncategorized/dexie-todo-list',
         component: DexieTodoList
+      },
+      {
+        name: 'Suspense',
+        path: '/uncategorized/suspense',
+        component: SuspenseComp
       }
     ]
   },

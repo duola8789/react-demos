@@ -1,19 +1,27 @@
 用来学习React的相关知识。
 
-## 目标
+# 依赖版本
+
+- React: v16
+- ReactRouter: V5
+- Redux: V4
+
+没有使用现成的框架类似CRA或Vite等框架，手撸的
+
+# 目标
 
 （2019.2.27）
 
-- Create React App 
+- Create React App
 - React Router
 - Redux
 - React Hooks + HOC + Render Props
 
-## 命令
+# 命令
 
 ```BASH
 # 安装依赖
-npm install 
+npm install
 
 # 热更新开发服务器：localhost:3000
 npm start
@@ -28,7 +36,8 @@ npm run build
 # 构建显式的Webpack, Babel, ESLint等配置文件
 npm run eject
 ```
-## 文档
+
+# 文档
 
 - [Create React App](https://github.com/facebook/create-react-app)
 - [开发模式](https://facebook.github.io/create-react-app/docs/deployment)

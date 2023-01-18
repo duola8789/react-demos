@@ -49,7 +49,7 @@ export default class Index extends Component {
             payload: e.target.value
           })
         }
-      ></Count>
+      />
     );
   }
 }

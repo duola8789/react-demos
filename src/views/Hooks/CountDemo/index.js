@@ -46,15 +46,11 @@ const CountHook = () => {
   );
 };
 
-export default class Demo8 extends Component {
-  state = { count: 0 };
-
-  render() {
-    return (
-      <div>
-        <Count />
-        <CountHook />
-      </div>
-    );
-  }
+export default function CountDemo() {
+  return (
+    <div>
+      <Count />
+      <CountHook />
+    </div>
+  );
 }
